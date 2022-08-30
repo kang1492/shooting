@@ -22,7 +22,7 @@ public class Controller : MonoBehaviour
         float x = Input.GetAxis("Mouse X"); 
         float y = Input.GetAxis("Mouse Y");
 
-        Vector3 direction = new Vector3(x, 0, y);
+        Vector3 direction = new Vector3(x, y, 0);
 
         transform.Translate(direction.normalized * speed * Time.deltaTime);
 

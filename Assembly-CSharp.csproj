@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7CF1F33E-A859-9D01-4F58-76470CD3E24C}</ProjectGuid>
+    <ProjectGuid>{121F3609-C801-1D60-C896-C3FB7800F293}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Controller.cs" />
     <Compile Include="Assets\Script\Enemy.cs" />
+    <Compile Include="Assets\Script\UIManager.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Understone\Free Aircraft Pack\readme.txt" />
