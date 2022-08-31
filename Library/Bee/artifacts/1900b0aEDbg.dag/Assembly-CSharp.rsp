@@ -349,10 +349,12 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
+"Assets/Script/Bullet.cs"
 "Assets/Script/Controller.cs"
 "Assets/Script/Enemy.cs"
-"Assets/Script/GameManager.cs"
-"Assets/Script/UIManager.cs"
+"Assets/Script/Manager/GameManager.cs"
+"Assets/Script/Manager/SpawnManager.cs"
+"Assets/Script/Manager/UIManager.cs"
 -langversion:9.0
 
 /deterministic

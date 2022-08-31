@@ -9,15 +9,21 @@ public class Enemy : MonoBehaviour
     {
         // Vector3.down = 0.-1.1
         transform.Translate(Vector3.down * Time.deltaTime);
+
+        if(transform.position.y <= -4.5f) // 데드존
+        {
+            Destroy(gameObject);
+        }
     }
 
     // 게임 오브젝트가 화면 밖으로 벗어났을 때 호출되는 함수
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
+    //private void OnBecameInvisible()
+    //{
+    //    Destroy(gameObject);
+    //}
 
-    // 게임 오브젝트와 충돌을 했을 때 호출되는 함수
+
+    // 게임 오브젝트와 충돌을 했을 때 호출되는 함수 // 지워주기
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);

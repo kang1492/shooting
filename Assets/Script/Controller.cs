@@ -6,11 +6,14 @@ public class Controller : MonoBehaviour
 {
     // 스피드 변수
     [SerializeField] float speed = 1.0f;
+    [SerializeField] Transform centerMuzzle;
 
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        InvokeRepeating(nameof(LayerCreate), 0, 0.1f);
     }
 
     
@@ -20,11 +23,14 @@ public class Controller : MonoBehaviour
         //float y = Input.GetAxis("Vertical");
 
         float x = Input.GetAxis("Mouse X"); 
-        float y = Input.GetAxis("Mouse Y");
+        //float y = Input.GetAxis("Mouse Y"); // 드래곤 플라이 지우기
 
-        Vector3 direction = new Vector3(x, y, 0);
+        //Vector3 direction = new Vector3(x, y, 0); // 드래곤 플라이 땀시 지우기
+        Vector3 direction = new Vector3(x, 0, 0);
 
         transform.Translate(direction.normalized * speed * Time.deltaTime);
+
+
 
         // 카메라 고정 
         // 게임 오브젝트의 위치를 스크린 공간으로 변환합니다.
@@ -34,9 +40,19 @@ public class Controller : MonoBehaviour
         if (position.x < 0f) position.x = 0.0f;
         if (position.x > 1f) position.x = 1.0f;
 
-        if (position.y < 0f) position.y = 0.0f;
-        if (position.y > 1f) position.y = 1.0f;
+        //if (position.y < 0f) position.y = 0.0f;
+        //if (position.y > 1f) position.y = 1.0f;
 
         transform.position = Camera.main.ViewportToWorldPoint(position);
+    }
+
+    public void LayerCreate() // 레이저 자동 발사
+    {
+        Instantiate
+        (
+           Resources.Load<GameObject>("Lazer"),
+           centerMuzzle.position,         
+           Quaternion.identity
+        );
     }
 }
