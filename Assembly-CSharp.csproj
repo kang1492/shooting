@@ -62,8 +62,10 @@
     <Compile Include="Assets\Script\Bullet.cs" />
     <Compile Include="Assets\Script\Enemy.cs" />
     <Compile Include="Assets\Script\Manager\GameManager.cs" />
+    <Compile Include="Assets\Script\Manager\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Space SFX - 102218\Notes.txt" />
     <None Include="Assets\Understone\Free Aircraft Pack\readme.txt" />
   </ItemGroup>
   <ItemGroup>

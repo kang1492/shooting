@@ -11,7 +11,7 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {   // 함수 호출
-        CreateInfinite();
+        //CreateInfinite(); // 시작시 한번 호출
 
         // Invoke : 지정된 시간 후에 함수를 호출하는 함수입니다.
         // InvokeReapeating : 지정된 시간 후에 함수를 호출한 뒤 특정한 시간마다 반복 실행하는 함수입니다.

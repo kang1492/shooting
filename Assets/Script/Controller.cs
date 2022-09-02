@@ -43,6 +43,7 @@ public class Controller : MonoBehaviour
     {
         //lazerPool.Get();
         var bullet = lazerPool.Get(); //9-1
+        SoundManager.instance.SoundStart(0); // 9-2 사운드 호출
         bullet.transform.position = centerMuzzle.transform.position; //9-1
     }
     

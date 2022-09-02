@@ -353,6 +353,7 @@
 "Assets/Script/Controller.cs"
 "Assets/Script/Enemy.cs"
 "Assets/Script/Manager/GameManager.cs"
+"Assets/Script/Manager/SoundManager.cs"
 "Assets/Script/Manager/SpawnManager.cs"
 "Assets/Script/Manager/UIManager.cs"
 -langversion:9.0
