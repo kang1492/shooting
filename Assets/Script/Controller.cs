@@ -32,8 +32,8 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
 
         //InvokeRepeating(nameof(LayerCreate), 0, 0.1f);9-1
         InvokeRepeating(nameof(InfiniteLazer), 0, 0.1f);

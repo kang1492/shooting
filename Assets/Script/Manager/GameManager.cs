@@ -8,16 +8,19 @@ public class GameManager : MonoBehaviour
 
     public int score;
 
+    
 
-    void Start()
-    {   
-        // 게임 데이터를 게임이 시작할 때 불러옵니다.
-        Load();
+    //void Start()
+    private void Awake() // 9-13 스타트 함수 이전에 실행됩니다.
+    {       
 
         if(instance == null)
         {
             instance = this;
         }
+
+        // 게임 데이터를 게임이 시작할 때 불러옵니다.
+        Load();
     }
 
     public void Save()
