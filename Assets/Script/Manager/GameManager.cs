@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 
     public int score;
 
+    // bool 변수는 초기화를 하지 않으면 false 값이 자동으로 들어갑니다.
+    public bool state; //9-14
+
     
 
     //void Start()

@@ -23,7 +23,14 @@ public class UIManager : MonoBehaviour
     {
         mainMenu.SetActive(false);
 
+        GameManager.instance.state = true; //9-14 
+
+        //SpawnManager.action(); // 9-14 호출
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked; // 움겨 오기 9-11 마우스 락 풀기
+
+        // Time Scale의 영향을 받지 않는 시간 입니다.
+        // Time.unscaledDeltaTime
     }
 }

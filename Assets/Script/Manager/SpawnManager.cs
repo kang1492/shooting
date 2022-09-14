@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+//using System; //9-14 안되는 사람꺼
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -7,9 +6,16 @@ public class SpawnManager : MonoBehaviour
     //               배열 선언   
     [SerializeField] Transform[ ] randomPosition;
 
+    //static public Action action; //9-14 안되는 사람꺼
+
     float timer;
 
-    void Start()
+    //public void Awake() // 9-14 안되는 사람꺼
+    //{
+    //    action = () => { InvokeRepeating(nameof(CreateInfinite), 0, 5); };
+    //}
+
+    void Start()  //9-14 안되는 사람꺼
     {   // 함수 호출
         //CreateInfinite(); // 시작시 한번 호출
 
@@ -40,6 +46,12 @@ public class SpawnManager : MonoBehaviour
     // 게임 오브젝트(Enemy)를 생성하는 함수
     public void CreateInfinite() // 무한생성
     {
+        // 게임메니져 잇는 state 변수가 false라면 함수를 return(종료)를 시킵니다.
+        if (GameManager.instance.state == false) // 9-14
+        {
+            return;
+        }
+
         Instantiate
             (// 리소스 폴더  ,로드 , 게임오브젝트 , 이름 Enemy
             Resources.Load<GameObject>("Enemy"),

@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] Material flash; //9-1
 
+    [SerializeField] GameObject effect; // 9-14 생성하기
+     
+
     private void Start() //9-1 적피격효과
     {
         enemySprite = GetComponent<SpriteRenderer>();
@@ -23,13 +26,20 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        // 게임메니져 잇는 state 변수가 false라면 함수를 return(종료)를 시킵니다.
+        if (GameManager.instance.state == false) return; // 9-14
+
         // Vector3.down = 0.-1.1
         transform.Translate(Vector3.down * Time.deltaTime);
         
                                        // || health <= 0 //9-2
         if (transform.position.y <= -4.5f || health <= 0) // 데드존
         {
-            Destroy(gameObject);
+            // effect가 활성화되어 파티클이 보이도록 설정합니다.
+            effect.gameObject.SetActive(true); // 임펙트를 꺼 놓고 실행될때 트류로 본다
+
+            // Enemy 오브젝트가 0.25초 뒤에 파괴됩니다.
+            Destroy(gameObject, 0.25f); // 9-14 임펙트 후 0.5초뒤 사라지게
         }
 
         // 적 피격 테스트 9-1 
@@ -82,12 +92,14 @@ public class Enemy : MonoBehaviour
 
         SoundManager.instance.SoundStart(1); // 파괴 되었을때 소리 출력
 
-        //Debug.Log("충돌");
-        Instantiate
-            (Resources.Load<GameObject>("Explosion"), //생성하고 싶은 게임 오브젝트
-            transform.position, // 생성되는 게임 오브젝트의 위치 
-            Quaternion.identity // Quaternion.identity : 회전을 하지 않겠다는 의미입니다.
-            );
+        //Debug.Log("충돌"); //9-14 에러 뜨는 이유
+        //Instantiate
+        //    (Resources.Load<GameObject>("Explosion"), //생성하고 싶은 게임 오브젝트
+        //   transform.position, // 생성되는 게임 오브젝트의 위치 
+        //    Quaternion.identity // Quaternion.identity : 회전을 하지 않겠다는 의미입니다.
+        //    );
+
+        
     }
 
     // 데미지를 받았을때 코르틴으로 처리하는 게 좋음 9-1

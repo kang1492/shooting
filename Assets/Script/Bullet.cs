@@ -11,7 +11,10 @@ public class Bullet : MonoBehaviour
     private IObjectPool<Bullet> lazerPool;//9-1
     
     void Update()
-    {     
+    {
+        // 게임메니져 잇는 state 변수가 false라면 함수를 return(종료)를 시킵니다.
+        if (GameManager.instance.state == false) return; // 9-14
+
         transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 

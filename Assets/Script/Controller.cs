@@ -41,6 +41,9 @@ public class Controller : MonoBehaviour
 
     public void InfiniteLazer()
     {
+        // 게임메니져 잇는 state 변수가 false라면 함수를 return(종료)를 시킵니다.
+        if (GameManager.instance.state == false) return; // 9-14
+
         //lazerPool.Get();
         var bullet = lazerPool.Get(); //9-1
         SoundManager.instance.SoundStart(0); // 9-2 사운드 호출
@@ -49,6 +52,9 @@ public class Controller : MonoBehaviour
     
     void Update()
     {
+        // 게임메니져 잇는 state 변수가 false라면 함수를 return(종료)를 시킵니다.
+        if (GameManager.instance.state == false) return;
+
         //float x = Input.GetAxis("Horizontal"); // 모바일되고, PC로 됩니다.
         //float y = Input.GetAxis("Vertical");
 
