@@ -366,6 +366,7 @@
 "Assets/Script/Manager/SoundManager.cs"
 "Assets/Script/Manager/SpawnManager.cs"
 "Assets/Script/Manager/UIManager.cs"
+"Assets/Script/Manager/VersatileButton.cs"
 -langversion:9.0
 
 /deterministic

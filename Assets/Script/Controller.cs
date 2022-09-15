@@ -6,6 +6,7 @@ public class Controller : MonoBehaviour
     // 스피드 변수
     [SerializeField] float speed = 1.0f;
     [SerializeField] Transform centerMuzzle;
+    [SerializeField] GameObject pet;//9-15
 
     // 메모리 풀로 사용할 게임 오브젝트
     [SerializeField] Bullet lazerPrefab; //9-1
@@ -54,6 +55,13 @@ public class Controller : MonoBehaviour
     {
         // 게임메니져 잇는 state 변수가 false라면 함수를 return(종료)를 시킵니다.
         if (GameManager.instance.state == false) return;
+
+        //                                 0이면 펫을 구매하지 않은 상태입니다.1이면 구매상태
+        if (GameManager.instance.dragon >= 1) //9-15
+        {
+            pet.SetActive(true);
+        }
+
 
         //float x = Input.GetAxis("Horizontal"); // 모바일되고, PC로 됩니다.
         //float y = Input.GetAxis("Vertical");
